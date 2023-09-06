@@ -22,7 +22,7 @@ username_input                       = "id=okta-signin-username"
 password_input                       = "id=okta-signin-password"
 remembermecheckbox                   = "id=input41"
 trouble_logging_in                   = "css_selector=button.faq-button.mdl-button.mdl-js-button.mdl-button--inverted.mdl-js-ripple-effect.mdl-button--primary"
-error_alert                          = "xpath=//div[@= By.ID( \"'okta-sign-in']//form[@action='/BusinessIQ/html']/div[1]//div[@role='alert']/p"
+error_alert                          = "xpath=//div[@= By.ID( \"'okta-sign-in']//form[@action='/App/html']/div[1]//div[@role='alert']/p"
 # Security question locators
 securityquestions_title                             = "xpath=//h2[@data-se='o-form-head']"
 securityquestions_question                          = "xpath=//form[@id='form60']/div/div/div/div/label"
@@ -54,7 +54,7 @@ pdf_file_body_element              = "xpath=//body/embed[@type='application/pdf'
 V1_logout_link                     = "id=logout"
 V2_user_menu_button                = "xpath=//button[@id='user-menu-btn']"
 V2_logout_link                     = "xpath=(//button[@role='menuitem'])[2]"
-goto_V2_button                     = "xpath=//div[@id='branding']//a[@href='/BusinessIQ/resources/v2/']"
+goto_V2_button                     = "xpath=//div[@id='branding']//a[@href='/App/resources/v2/']"
 
 # Login page keywords
 def goto_login_page():

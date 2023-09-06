@@ -1,9 +1,9 @@
 *** Settings ***
 Documentation     Example test cases using the data-driven testing approach.
 Test Template     Login
-Resource    ${EXECDIR}/BusinessIQ/Resource/Common.robot
-Resource    ${EXECDIR}/BusinessIQ/Resource/Features/UserManagement.robot
-Resource    ${EXECDIR}/BusinessIQ/Resource/Pages/Home/Home.robot
+Resource    ${EXECDIR}/App/Resource/Common.robot
+Resource    ${EXECDIR}/App/Resource/Features/UserManagement.robot
+Resource    ${EXECDIR}/App/Resource/Pages/Home/Home.robot
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 

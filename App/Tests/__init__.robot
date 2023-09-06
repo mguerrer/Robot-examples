@@ -11,7 +11,7 @@ ${BIQ_PAGES_DIR}
 *** Keywords ***
 Init Suite
     Log To Console    Starting suite
-    Set Suite Variable    ${BIQ_PAGES_DIR}    ${EXECDIR}/BusinessIQ/Resource/Pages
+    Set Suite Variable    ${BIQ_PAGES_DIR}    ${EXECDIR}/App/Resource/Pages
 
 Teardown Suite
     Log To Console    Teardown suite

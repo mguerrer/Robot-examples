@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  Demonstrate Login with POM and CSV
-Resource    ${EXECDIR}/BusinessIQ/Resource/Common.robot
-Resource    ${EXECDIR}/BusinessIQ/Resource/Features/UserManagement.robot
+Resource    ${EXECDIR}/App/Resource/Common.robot
+Resource    ${EXECDIR}/App/Resource/Features/UserManagement.robot
 
 
 

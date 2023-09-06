@@ -1,8 +1,8 @@
 # Environment parameters
 env_name = "uat"  #  Default.   Can be also be dev or stage.
 biq_url = {
-    "dev": "https://biq-jboss-eap-dev.internal.dev.ascendbis.us.coaas.net/BusinessIQ/",
-    "uat": "https://stg-gateway.secure.experian.com/BusinessIQ/"
+    "dev": "https://biq-jboss-eap-dev.internal.dev.ascendbis.us.coaas.net/App/",
+    "uat": "https://stg-gateway.secure.experian.com/App/"
 }
 database = {
     "dev": "pegsdb1",

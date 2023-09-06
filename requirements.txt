@@ -16,3 +16,5 @@ virtualenv
 robotframework-pabot
 rebot
 chromedriver-py
+robotframework-datadriver
+robotframework-requests

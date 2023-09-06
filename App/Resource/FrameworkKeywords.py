@@ -86,7 +86,7 @@ def suite_setup(suite_name: str, excel_name: str="MasterTestData.xls"):
         os.makedirs(screenshot_path, exist_ok=True)
     global excel_file
 
-    excel_file = git_root.replace("\\","/")+"/businessiq/TestData/"+Environment.env_name.upper()+"/"+excel_name
+    excel_file = git_root.replace("\\","/")+"/App/TestData/"+Environment.env_name.upper()+"/"+excel_name
     BuiltIn().log_to_console("USING EXCEL FILE:"+excel_file)
     BuiltIn().set_global_variable("${resultFolder}", result_folder.replace("\\", "/"))
     BuiltIn().set_global_variable("${suite_result_folder}", suite_result_folder.replace("\\", "/"))    

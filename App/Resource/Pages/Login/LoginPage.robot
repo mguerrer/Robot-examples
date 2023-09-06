@@ -14,7 +14,7 @@ ${biq.login.legal_terms_conditions}               css=#lwrapper div:nth-of-type(
 ${biq.login.log_in}                               id=okta-signin-submit
 ${biq.login.forgot_password_link}                 css=a.link.js-forgot-password
 ${biq.login.page_loaded_text}                     or registered trademarks of Experian Information Solutions, Inc
-${biq.login.page_url}                             /BusinessIQ/login.html
+${biq.login.page_url}                             /App/login.html
 ${biq.login.playarrow_watch_the_video}            css=a.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--primary
 ${biq.login.privacy_policy}                       css=#lwrapper div:nth-of-type(3) ul.footer-links li:nth-of-type(2) a
 ${biq.login.read_our_training_docs_arrowforward}  css=a.read__training-button.mdl-button.mdl-js-button.mdl-button--stroked.mdl-js-ripple-effect
@@ -22,7 +22,7 @@ ${biq.login.username}                             id=okta-signin-username
 ${biq.login.password}                             id=okta-signin-password
 ${biq.login.remembermecheckbox}                   id=input41
 ${biq.login.trouble_logging_in}                   css=button.faq-button.mdl-button.mdl-js-button.mdl-button--inverted.mdl-js-ripple-effect.mdl-button--primary
-${biq.login.error_alert}                          xpath=//div[@id='okta-sign-in']//form[@action='/BusinessIQ/login.html']/div[1]//div[@role='alert']/p
+${biq.login.error_alert}                          xpath=//div[@id='okta-sign-in']//form[@action='/App/login.html']/div[1]//div[@role='alert']/p
 
 *** Keywords ***
 Click Close Button

@@ -1,3 +1,3 @@
 *** Settings ***
 Library    ../../CustomLibs/QuickSearch.py
-Resource    ${EXECDIR}/BusinessIQ/Resource/Common.robot
+Resource    ${EXECDIR}/App/Resource/Common.robot

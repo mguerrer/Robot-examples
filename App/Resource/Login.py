@@ -56,7 +56,7 @@ pdf_file_body_element              = "xpath=//body/embed[@type='application/pdf'
 V1_logout_link                     = "id=logout"
 V2_user_menu_button                = "xpath=//button[@id='user-menu-btn']"
 V2_logout_link                     = "xpath=//div[@id='mat-menu-panel-0']/div/div[@class='mat-menu-content ng-tns-c140-1']/button[2]"
-goto_V2_button                     = "xpath=//div[@id='branding']//a[@href='/BusinessIQ/resources/v2/']"
+goto_V2_button                     = "xpath=//div[@id='branding']//a[@href='/App/resources/v2/']"
 scheduled_maintenance_alert        = "xpath=//h4/b"
 okta_password_expired              = "xpath=//h2[.='Your Okta password has expired']"
 unsuccessful_login_reason          = "xpath=//h2[.='Unsuccessful Login to BusinessIQ ']/../../../div/div/span"

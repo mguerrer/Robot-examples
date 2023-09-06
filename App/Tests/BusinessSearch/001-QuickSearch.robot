@@ -1,7 +1,7 @@
 ***Settings***
 Library           DataDriver    dialect=excel    file=../../Data/001-QuickSearch.csv
-Resource          ${EXECDIR}/BusinessIQ/Resource/Features/BusinessSearch.robot
-Resource          ${EXECDIR}/BusinessIQ/Resource/Features/UserManagement.robot
+Resource          ${EXECDIR}/App/Resource/Features/BusinessSearch.robot
+Resource          ${EXECDIR}/App/Resource/Features/UserManagement.robot
 Test Template     Quick Search
 Test Setup        Common.Begin Web Test
 Test Teardown     Common.End Web Test

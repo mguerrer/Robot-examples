@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library           ListenerLibrary
-Resource   ${EXECDIR}/BusinessIQ/Settings.robot
+Resource   ${EXECDIR}/App/Settings.robot
 
 *** Variables ***
 

@@ -1,8 +1,8 @@
 *** Settings ***
-Resource    ${EXECDIR}/BusinessIQ/Resource/Common.robot
-Resource    ${EXECDIR}/BusinessIQ/Resource/Pages/Login/LoginPage.robot
-Resource    ${EXECDIR}/BusinessIQ/Resource/Pages/Login/LoginSecurityQuestion.robot
-Resource    ${EXECDIR}/BusinessIQ/Data/DataManager.robot
+Resource    ${EXECDIR}/App/Resource/Common.robot
+Resource    ${EXECDIR}/App/Resource/Pages/Login/LoginPage.robot
+Resource    ${EXECDIR}/App/Resource/Pages/Login/LoginSecurityQuestion.robot
+Resource    ${EXECDIR}/App/Data/DataManager.robot
 
 *** Keywords ***
 Navigate To Login Page
