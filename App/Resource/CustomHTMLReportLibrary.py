@@ -1,6 +1,6 @@
 import os
 import datetime
-
+from robot.libraries.BuiltIn import BuiltIn
 
 def create_report_directory(reportDirectory, suiteName):
     # This keyword creates the necessary folder structure for reporting
@@ -132,7 +132,6 @@ def generate_suite_report_header(suiteResultPath, suiteName):
     report_file.write(header_content)
     report_file.close()
 
-
 def log_execution_endtime_to_report_file(testReportpath):
     # This keyword writes the test execution end time and log file path to the report
     # Read in the file
@@ -152,15 +151,13 @@ def log_execution_endtime_to_report_file(testReportpath):
         logtext = "</table></body></html>"
         file.write(logtext)
 
-
 def write_result_to_TestReport(testResultPath, ScreenshotName, Step, ExpectedResult, ActualResult, Status):
     # This keyword appends the result of a step to the test html report
     screenshotPath = "../Screenshots/" + ScreenshotName
-    print( testResultPath + ' xxxxx' )
     rpt_fl = open(testResultPath, "a")
-    if Status == "PASSED" or Status == "PASS" or Status == "passed" or Status == "pass":
+    if Status == "PASS" or Status == "PASS" or Status == "PASS" or Status == "pass":
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + """</td><td><font color="#2eb82e"><b>PASSED</b></font></td>""" + """<td><a href=" """ + screenshotPath + """ ">Screenshot</a></td>"""
-    elif Status == "FAILED" or Status == "FAIL" or Status == "failed" or Status == "fail":
+    elif Status == "FAIL" or Status == "FAIL" or Status == "FAIL" or Status == "fail":
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + """</td><td><font color="#ff3300"><b>FAILED</b></font></td>""" + """<td><a href=" """ + screenshotPath + """ ">Screenshot</a></td>"""
     else:
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + "</td><td><b>INFO</b></td>" + """<td><a href=" """ + screenshotPath + """ ">Screenshot</a></td>"""
@@ -170,14 +167,13 @@ def write_result_to_TestReport(testResultPath, ScreenshotName, Step, ExpectedRes
     rpt_fl.write(rpt_data)
     rpt_fl.close()
 
-
 def write_result_to_TestReport_Without_Screenshot(testResultPath, Step, ExpectedResult, ActualResult, Status):
     # This keyword appends the result of a step to the test html report
     # screenshotPath = "../Screenshots/" + ScreenshotName
     rpt_fl = open(testResultPath, "a")
-    if Status == "PASSED" or Status == "PASS" or Status == "passed" or Status == "pass":
+    if Status == "PASS" or Status == "PASS" or Status == "PASS" or Status == "pass":
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + """</td><td><font color="#2eb82e"><b>PASSED</b></font></td>""" + """<td></td>"""
-    elif Status == "FAILED" or Status == "FAIL" or Status == "failed" or Status == "fail":
+    elif Status == "FAIL" or Status == "FAIL" or Status == "FAIL" or Status == "fail":
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + """</td><td><font color="#ff3300"><b>FAILED</b></font></td>""" + """<td></td>"""
     else:
         rpt_data = "<tr><td>" + Step + "</td><td>" + ExpectedResult + "</td><td>" + ActualResult + "</td><td><b>INFO</b></td>" + """<td></td>"""
@@ -187,12 +183,16 @@ def write_result_to_TestReport_Without_Screenshot(testResultPath, Step, Expected
     rpt_fl.write(rpt_data)
     rpt_fl.close()
 
-
 def write_result_to_SuiteReport(suiteReportPath, testReportPath, testcaseID, testcaseDescription, testStatus):
     # This keyword appends a test result to the test suite report
     suiteReportfile = open(suiteReportPath, "a")
+    suite_folder = BuiltIn().get_variable_value("${suite_result_folder}")
+    # Adds relative images for robot 
+    testReportPath = suite_folder + "/Details/" + testcaseID + ".html"
+    testReportPath = os.path.relpath( testReportPath, suite_folder)
     dquote = '"'
     testReportPath = dquote + testReportPath + dquote
+   
     if testStatus == "PASS" or testStatus == "pass":
         reportData = "<tr><td><a href=" + testReportPath + ">" + testcaseID + "</a></td><td>" + testcaseDescription + """</td><td><font color="#2eb82e"><b>PASSED</b></font></td>"""
     elif testStatus == "FAIL" or testStatus == "fail":
