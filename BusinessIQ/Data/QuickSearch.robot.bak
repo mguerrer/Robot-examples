@@ -1,0 +1,74 @@
+*** Settings ***
+Library  SeleniumLibrary
+Documentation  Home web application page object for Quick Search.
+
+*** Variables ***
+${QuickSearch.business_name}    id=business_name
+${QuickSearch.city}             id=city
+${QuickSearch.state}            id=state
+${QuickSearch.zip}              id=zip
+${QuickSearch.telephone_1}      id=qs_phone_1
+${QuickSearch.telephone_2}      id=qs_phone_2
+${QuickSearch.bin}              id=bin
+${QuickSearch.search}           id=expanded_search_button
+${QuickSearch.clear_quicksearch}    id=clear_quicksearch
+${QuickSearch.loadingMsg}       xpath=//div[@id='quicksearch']/div[@class='yui-dt-bd']/table//div[@class='yui-dt-liner yui-dt-loading']
+${QuickSearch.tableRows}        xpath=//div[@id='quicksearch']/div[@class='yui-dt-bd']/table/tbody[@class='yui-dt-data']/tr
+
+*** Keywords ***
+Set Input Field
+    [Arguments]    ${locator}    ${value}
+    Return From Keyword If    '${value}' == ''
+    Wait Until Element Is Enabled    ${locator}
+    Clear Element Text    ${locator}
+    Click Element    ${locator}
+    Input Text    ${locator}   ${value}
+    Press Keys    ${locator}   TAB
+
+Set Business Name
+    [Arguments]    ${name}
+    Set Input Field    ${QuickSearch.business_name}    ${name}
+
+Set City
+    [Arguments]    ${city}
+    Set Input Field    ${QuickSearch.city}    ${city}
+
+Set State
+    [Arguments]    ${state}
+    Return From Keyword If    '${state}' == ''
+    Wait Until Element Is Visible    ${QuickSearch.state}  
+    Click Element   ${QuickSearch.state}    
+    Select From List By Value     ${QuickSearch.state}    ${state}
+    Click Element   ${QuickSearch.state}    
+
+    #Wait Until Element Is Visible    ${QuickSearch.loadingMsg}  
+    Wait Until Element Is Not Visible    ${QuickSearch.loadingMsg} 
+
+Set Zip Code
+    [Arguments]    ${zip}
+    Set Input Field    ${QuickSearch.zip}    ${zip}
+
+Set Telephone
+    [Arguments]    ${code}     ${number}
+    Set Input Field    ${QuickSearch.telephone_1}    ${code}
+    Set Input Field    ${QuickSearch.telephone_2}     ${number}
+
+Set Bin
+    [Arguments]    ${bin}
+    Set Input Field    ${QuickSearch.bin}    ${bin}
+
+Click Search Button And Wait Results
+    Click Element     ${QuickSearch.search}
+    Wait Until Element Is Visible    ${QuickSearch.loadingMsg}  
+    Wait Until Element Is Not Visible    ${QuickSearch.loadingMsg}  
+
+Count Results
+    ${count} =    Get Element Count    ${QuickSearch.tableRows} 
+    [Return]    ${count}
+
+Click Clear Fields
+    Click Element    ${QuickSearch.clear_quicksearch} 
+
+Verify Page Loaded
+    [Documentation]  Verify that the page loaded completely.
+    Wait Until Page Contains  Quick Search

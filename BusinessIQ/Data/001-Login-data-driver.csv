@@ -1,0 +1,16 @@
+*** Test Cases ***,${username},${priority},${subcode},${portfolio},${scoringModel},[Tags],[Documentation]
+001_Login_With_Wrong_Credentials,qa_admin,1,,,,023-AccountDueDiligence,Validate error message when user log in with wrong credentials
+002_Login_With_User_Whose_Password_Expired,biq_stg_admin2,1,,,,024-AccountHistoryNotes,Validate error message to password expired user
+003_Login_With_User_With_Security_Question,2733-test,2,,,,025-DomesticReportsV2,Validate security question page is visible for user that has security question set
+004_Login_With_User_Locked_Account,qa_admin,2,,,,026-MySettingsV2,Login with a user whose account is locked
+005_Login_And_Relogin_With_V1_As_Default,qa_admin,3,563736,Alerts Portfolio,INTELLISCORE PLUS V2,"033-ReportManagerV2,024-AccountHistoryNotes,023-AccountDueDiligence",login to biq with v1 set as default then logout and relogin to biq
+006_Login_And_Relogin_With_V2_As_Default,qa_admin,4,563736,Alerts Portfolio,INTELLISCORE PLUS V2,028-TaskV2,login to biq with v2 set as default then logout and relogin to biq
+007_Validate_Forgot_Password,qa_admin,2,,,,029-SearchV2,validate forgot password link in login page is correctly working
+008_Validate_Trouble_Logging_In,qa_admin,4,,,,"030-AlertsV2,024-AccountHistoryNotes",validate Trouble Logging In link in login page is correctly working
+009_Validate_Legal_Terms_&_Conditions,qa_admin,8,,,,031-DesignStudioV2,validate Legal Terms & Conditions link in login page is correctly working
+010_Validate_Privacy_Policy,qa_admin,9,,,,032-DashBoard_V2,validate Privacy Policy link in login page is correctly working
+011_validate_link_Contact_Us,qa_admin,1,,,,"033-ReportManagerV2,024-AccountHistoryNotes,023-AccountDueDiligence",validate Contact us link in login page is correctly working
+012_Validate_Watch_The_Video,qa_admin,2,,,,034-PortfolioV2,validate Watch The Video link in login page is correctly working
+013_Validate_Read_Our_Training_Docs,qa_admin,1,,,,035-V2Help,validate Read Our Training Docs link in login page is correctly working
+014_Logout_From_BIQ_V1_And_Go_Back,qa_admin,3,,,,023-AccountDueDiligence,user logs out from BIQ V1 and goes back to land in login page again
+015_Logout_From_BIQ_V2_And_Go_Back,qa_admin,1,,,,023-AccountDueDiligence,user logs out from BIQ V2 and goes back to land in login page again

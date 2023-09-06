@@ -1,0 +1,5 @@
+*** Test Cases ***,${priority},${Name},${City},${State},${ZIP},${BIN},[Tags],[Documentation]
+001-Search-By-All,1,EASTMAN KODAK CO,ROCHESTER,NY,14650,712932486,099-UserCanSearchBusiness,User can search by different criterias
+002-Search-By-Name,1,EASTMAN KODAK CO,,,,,099-UserCanSearchBusiness,User can search by different criterias
+003-Search-By-City,1,,ROCHESTER,,,,099-UserCanSearchBusiness,User can search by different criterias
+004-Search-By-State,1,,,NY,,,099-UserCanSearchBusiness,User can search by different criterias

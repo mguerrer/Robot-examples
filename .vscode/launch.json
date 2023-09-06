@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "RobotCode: Run Current",
+            "type": "robotcode",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "target": "${file}",
+            "attachPython": true
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
