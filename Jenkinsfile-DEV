@@ -1,0 +1,45 @@
+pipeline {
+    agent { label 'Linux' }
+
+    stages {
+        stage('Install') {
+            steps {
+                sh 'chmod 777 ./install_chromedriver.sh'
+                sh './install_chromedriver.sh'
+                sh 'chmod 777 ./install_chrome.sh'
+                sh './install_chrome.sh'
+                sh 'python3.9 -m pip install --user virtualenv'
+                sh 'virtualenv uat'
+                sh 'source uat/bin/activate'
+                sh 'python3.9 -m pip install --user -r requirements.txt'
+                sh 'python3.9 --version'
+            }
+        }
+        stage('DEV UI Test') { 
+            steps {
+                sh 'rm -rf DEV1'
+                catchError {     // https://github.com/mkorpela/pabot           
+                    sh "pabot --processes 4 --verbose -d DEV1 --pythonpath businessiq/Resource --nostatusrc businessiq/TestUI/"
+                }
+            }
+        }
+        stage('DEV API TEST') { 
+            steps {
+                sh 'rm -rf DEV2'
+                catchError {
+                    //sh "pabot --processes 4 --verbose -d DEV2 --pythonpath businessiq/Resource --nostatusrc businessiq/TestSuite/002-SystemAdministrationPortfolio.robot businessiq/TestSuite/015-InternationalSearchAndPullReports.robot"
+                }
+            }
+        }
+        stage('Publish') { 
+            steps {
+                catchError {
+                    sh 'rebot --output output.xml DEV1/output.xml DEV2/output.xml'
+                }                     
+                robot otherFiles: 'DEV1/*/Screenshots/*.*,DEV1/**/*.html,DEV2/*/Screenshots/*.*,DEV2/**/*.html', outputPath: '.', logFileName: 'log.html', outputFileName: 'output.xml', reportFileName: 'report.html', passThreshold: 100, unstableThreshold: 75.0
+                archiveArtifacts artifacts: 'DEV1/**/*.*,DEV1/*/Screenshots/*.*,DEV2/**/*.*,DEV2/*/Screenshots/*.*', allowEmptyArchive: true, onlyIfSuccessful: false 
+                sh 'echo "BUILD="$BUILD_NUMBER;echo "DIR="$PWD;ls -laR'
+            }
+        }
+    }
+}
