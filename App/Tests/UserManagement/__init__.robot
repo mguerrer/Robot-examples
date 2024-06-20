@@ -1,4 +1,4 @@
 # Suite init settings
-*** Setting ***
+*** Settings ***
 Documentation     Setting metadata for test suite User Management
 # Test Tags        BIQ User Management

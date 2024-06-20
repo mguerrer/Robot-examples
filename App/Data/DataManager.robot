@@ -7,9 +7,9 @@ Library  ../CustomLibs/UserDetails.py
 Get CSV Data
     [Arguments]  ${FilePath}
     ${Data} =  read csv file  ${FilePath}
-    [Return]  ${Data}
+    RETURN  ${Data}
 
 Get User Password
     [Arguments]    ${username}
     ${password}    UserDetails.Get Password    ${username}
-    [Return]    ${password}
+    RETURN    ${password}

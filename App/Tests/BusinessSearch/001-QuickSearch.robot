@@ -6,7 +6,7 @@ Test Template     Quick Search
 Test Setup        Common.Begin Web Test
 Test Teardown     Common.End Web Test
 
-*** Test Case ***
+*** Test Cases ***
 Quick Search with Name City State ZIP and BIN
 
 *** Keywords ***

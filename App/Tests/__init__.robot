@@ -1,5 +1,5 @@
 # Suite init settings
-*** Setting ***
+*** Settings ***
 Documentation     Setting metadata for test suite directory
 Suite Setup       Init Suite    
 Suite Teardown    Teardown Suite

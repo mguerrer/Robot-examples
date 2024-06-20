@@ -1,5 +1,5 @@
 # Suite init settings
-*** Setting ***
+*** Settings ***
 Documentation     Setting metadata for test suite directory
 #Test Tags         BIQ_Suite
 
