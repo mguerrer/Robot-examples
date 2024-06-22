@@ -12,11 +12,11 @@ This project run Python/Robot test suites for regression. The way to use is the 
 Tests will be executed on git root folder in any case.
 ### 1. Run sequential with robot framework executor
    In this execution method you will get a single sequential process (safest but slower).
-   <pre><code>robot businessiq/TestSuite/027-AccountDetailsV2.robot</code></pre>
+   <pre><code>robot App/Tests/001-QuickSearch.robot</code></pre>
 
 ### 2. Run suite parallel using pabot
    This method is useful when you want to run many suites, e.g. in Jenkins pipeline or a local round.   In this execution method you will get --processes threads runing in each thread one suite and tests in sequential.
-   <pre><code>pabot --processes 4 --verbose -d results businessiq/TestSuite/001-Login.robot</code></pre>
+   <pre><code>pabot --processes 4 --verbose -d results App/Tests/001-Login-csv.robot</code></pre>
    Notes:
 
    * You can run test cases in parallel by adding --testlevelsplit option.  However, this method is reccomended only when you are sure that all tests are designed to support parallel execution.
