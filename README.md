@@ -1,9 +1,11 @@
-# BIQ Test Automation
+# Robot Test Automation
 This project run Python/Robot test suites for regression. The way to use is the following:
 
 ## Installation
 1- Install Python https://www.python.org/downloads/release/python-3918/
+
 2- Install pip: <code>python.exe -m pip install --upgrade pip --trusted-host pypi.org --trusted-host files.pythonhosted.org pip</code>
+
 3- Install libraries: <code>python3.9 -m pip install --user -r requirements.txt</code>
 
 ## Running tests
