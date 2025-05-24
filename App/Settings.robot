@@ -6,4 +6,4 @@ Resource    ${EXECDIR}/Settings.robot
 
 &{BASE_URL}  dev=https://stg-gateway.secure.experian.com/  uat=https://stg-gateway.secure.experian.com/  prod=https://stg-gateway.secure.experian.com/
 ${LOGIN_URL} =  BusinessIQ/login.html
-${PATH_CSV} =  C:/Github/Robot/App/Data/Users.csv
+${PATH_CSV} =  C:/Github/Robot-examples/App/Data/Users.csv
