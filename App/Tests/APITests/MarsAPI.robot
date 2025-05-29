@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Collections
-Library    c:/Github/Robot-examples/App/Api/mars-photo-api.py    WITH NAME    MarsPhotoAPI
+Library        C:/Proyectos_QA/Robot-examples/App/Api/mars-photo-api.py    WITH NAME    MarsPhotoAPI
 Suite Setup    Log    Iniciando pruebas de MarsPhotoAPI
 
 *** Variables ***
